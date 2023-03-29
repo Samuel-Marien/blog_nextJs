@@ -5,7 +5,7 @@ import FeaturedPosts from '../components/home-page/featured-posts'
 
 const DUMMY_POSTS = [
   {
-    slug: 'getting-started-with-nextJs',
+    slug: 'getting-started-with-nextjs',
     title: 'getting started with nextJs',
     image: 'getting-started-nextjs.png',
     excerpt:
@@ -13,7 +13,7 @@ const DUMMY_POSTS = [
     date: '2022-02-10'
   },
   {
-    slug: 'getting-started-with-nextJs2',
+    slug: 'getting-started-with-nextjs2',
     title: 'getting started with reactjs',
     image: 'getting-started-nextjs.png',
     excerpt:
@@ -21,7 +21,7 @@ const DUMMY_POSTS = [
     date: '2022-02-10'
   },
   {
-    slug: 'getting-started-with-nextJs3',
+    slug: 'getting-started-with-nextjs3',
     title: 'getting started with nextJs',
     image: 'getting-started-nextjs.png',
     excerpt:
@@ -29,7 +29,7 @@ const DUMMY_POSTS = [
     date: '2022-02-10'
   },
   {
-    slug: 'getting-started-with-nextJs4',
+    slug: 'getting-started-with-nextjs4',
     title: 'getting started with reactjs2',
     image: 'getting-started-nextjs.png',
     excerpt:
