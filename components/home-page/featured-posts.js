@@ -1,7 +1,13 @@
 import React from 'react'
 
-const FeaturedPostsPage = () => {
-  return <div>FeaturedPostsPage</div>
+import classes from './featured-posts.module.css'
+
+const FeaturedPosts = () => {
+  return (
+    <section className={classes.latest}>
+      <h2>featured Posts</h2>
+    </section>
+  )
 }
 
-export default FeaturedPostsPage
+export default FeaturedPosts
