@@ -1,27 +1,49 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
+import Image from 'next/image'
 
 import classes from './post-content.module.css'
 import PostHeader from './post-header'
 
-// const DUMMY_POST = {
-//   slug: 'getting-started-with-nextJs',
-//   title: 'getting started with nextJs',
-//   image: 'getting-started-nextjs.png',
-//   excerpt:
-//     "The React Framework for the Web Used by some of the world's largest companies, Next.js enables you to create full-stack web applications by extending the latest React features, and integrating powerful Rust-based JavaScript tooling for the fastest builds.",
-//   date: '2022-02-10',
-//   content: '# This is a first post'
-// }
-
 const PostContent = (props) => {
   const { post } = props
+
   const imagePath = `/images/posts/${post.slug}/${post.image}`
+
+  const customRenderers = {
+    // img(image) {
+    //   return (
+    //     <Image
+    //       src={`/images/posts/${post.slug}/${image.src}`}
+    //       alt={image.alt}
+    //       width={600}
+    //       height={300}
+    //     />
+    //   )
+    // },
+    p(paragraph) {
+      const { node } = paragraph
+      if (node.children[0].tagName === 'img') {
+        const image = node.children[0]
+        return (
+          <div className={classes.image}>
+            <Image
+              src={`/images/posts/${post.slug}/${image.properties.src}`}
+              alt={image.properties.alt}
+              width={600}
+              height={300}
+            />
+          </div>
+        )
+      }
+      return <p>{paragraph.children}</p>
+    }
+  }
+
   return (
     <article className={classes.content}>
       <PostHeader title={post.title} image={imagePath} />
-
-      <ReactMarkdown>{post.content}</ReactMarkdown>
+      <ReactMarkdown components={customRenderers}>{post.content}</ReactMarkdown>
     </article>
   )
 }
