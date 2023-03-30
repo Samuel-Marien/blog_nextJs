@@ -4,7 +4,7 @@ function handler(req, res) {
 
     if (
       !email ||
-      !email.includ('@') ||
+      !email.includes('@') ||
       !name ||
       name.trim() === '' ||
       !message ||
@@ -23,7 +23,7 @@ function handler(req, res) {
 
     res
       .status(201)
-      .json({ message: 'success stored message', message: newMessage })
+      .json({ message: 'Successfully stored message', message: newMessage })
   }
 }
 
