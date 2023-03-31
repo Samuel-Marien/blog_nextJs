@@ -32,7 +32,6 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
   const postFilenames = getPostsFiles()
-  console.log(postFilenames)
 
   const slugs = postFilenames.map((filename) => filename.replace(/\.md$/, ''))
 
